@@ -11,16 +11,56 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
+    <!-- Google font link -->
+     <link href="https://fonts.googleapis.com/css?family=Gruppo" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="album.css" rel="stylesheet">
   </head>
 
-  <body>
+  <body id="body">
+
+    <style media="screen">
+
+    #body{
+      background-image: url("{% static 'jfjourney02.jpg' %}");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      font-family: 'Gruppo', cursive;
+      font-weight: bold;
+    }
+
+    .jumbotron{
+      background-image: url("{% static 'jfjourney02.jpg' %}");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    .album{
+      background-image: url("{% static 'jfjourney02.jpg' %}");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    footer{
+      background-image: url("{% static 'jfjourney02.jpg' %}");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .container{
+      color: white;
+    }
+
+    </style>
 
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{% url 'home' %}">JericFederer97</a>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'home' %}">The JF Journey</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,14 +76,14 @@
 
     <main role="main">
       <div class="container">
-        <h1 class="text-center pt-3">Welcome to JF97's Blog</h1>
+        <h1 class="text-center mt-5 pt-5">The JF Blog</h1>
         <br>
         <br>
         <h2>Latest post</h2>
         <hr>
 
         {% for blog in blogs.all %}
-        <a href="{% url 'detail' blog.id %}"><h3>{{ blog.title }}</h3></a>
+        <a class="blogtitle" href="{% url 'detail' blog.id %}"><h3>{{ blog.title }}</h3></a>
         {{ blog.pub_date_pretty }}
         <br>
         <img class="img-fluid" src="{{ blog.image.url }}" height="200" width="200"/>
@@ -56,7 +96,7 @@
 
     <footer class="text-muted">
       <div class="container text-center">
-        <p>© Jeric Federer {% now "Y" %}</p>
+        <p>© Jeric Bandong {% now "Y" %}</p>
       </div>
     </footer>
 
