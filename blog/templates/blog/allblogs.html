@@ -263,18 +263,19 @@
       <br>
       <div class="row featurette">
         <div class="col-md-7">
-
+          <br>
+          <hr>
           <a class="blogtitle featurette-heading" href="{% url 'detail' blog.id %}"><h3>{{ blog.title }}</h3></a>
           {{ blog.pub_date_pretty }}
-          <br>
           <p>{{ blog.summary }}</p>
         </div>
         <div class="col-md-5">
           <br>
+          <hr>
           <img class="featurette-image img-fluid mx-auto myImg" src="{{ blog.image.url }}">
           <br>
         </div>
-        <hr class="featurette-divider">
+
         {% endfor %}
       </div>
 
