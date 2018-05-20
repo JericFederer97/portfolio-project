@@ -11,7 +11,7 @@ class Blog(models.Model):
         return self.title
 
     def summary(self):
-        return self.body[:250] + '...'
+        return self.body[:50] + ' ...' + 'click title for full details'
 
     def pub_date_pretty(self):
         return self.pub_date.strftime('%b %e %Y')
