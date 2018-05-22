@@ -268,11 +268,13 @@
           <a class="blogtitle featurette-heading" href="{% url 'detail' blog.id %}"><h3>{{ blog.title }}</h3></a>
           {{ blog.pub_date_pretty }}
           <p>{{ blog.summary }}</p>
+          <p class="text-muted">Click entry title for full details</p>
+          
         </div>
         <div class="col-md-5">
           <br>
           <hr>
-          <img class="featurette-image img-fluid mx-auto myImg" src="{{ blog.image.url }}">        
+          <img class="featurette-image img-fluid mx-auto myImg" src="{{ blog.image.url }}">
         </div>
         {% endfor %}
       </div>
